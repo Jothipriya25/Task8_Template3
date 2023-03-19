@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> template3 </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            * {
+                
+                margin: 0;
+                padding: 0;
+                font-family:sans-serif;
+
+            }
+            td.nav:hover
+            {
+                background-color:rgb(196, 230, 0);
+                opacity:0.8;
+
+            }
+            td.nav{
+                padding-top:30px; 
+                padding-bottom: 30px;
+            }
+            /* body {
+                height: 100cm;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgb(25,12,41);
+            } */
+            .slider {
+                position: relative;
+                width: 80%;
+                overflow: hidden;
+            }
+            .images {
+                display: flex;
+                width: 100%;
+            }
+            .images img {
+                height: 400px;
+                width: 600%;
+                transition: all 0.15s ease;
+            }
+            .images input {
+                display: none;
+            }
+            .dots {
+                display: flex;
+                justify-content: center;
+                margin: 5px;
+            }
+            .dots label {
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                border: solid black 3px;
+                cursor: pointer;
+                transition: all 0.15s ease;
+                margin: 5px;
+            }
+            .dots label:hover {background: rgb(107, 106, 106);}
+            #img1:checked ~ .m1 {
+                margin-left: 0;
+            }
+            #img2:checked ~ .m2 {
+                margin-left: -100%;
+            }
+            #img3:checked ~ .m3 {
+                margin-left: -200%;
+            }
+            #img4:checked ~ .m4 {
+                margin-left: -300%;
+            }
+            .container{
+                margin: 0;
+                /* width:280px;
+                height:200px; */
+
+            }
+            .cards{
+                width:280px;
+                /* height: 50px; */
+                margin:0;
+                padding:0;
+                background-color: rgb(196, 230, 0);
+
+                
+            }
+            .card-body img{
+                width:100%;
+                margin:0;
+                padding:0;
+                display: block;
+            }
+            .footer p{
+                text-align:center;
+                padding-top: 20px;
+                padding-bottom:50px;
+                margin:0;
+                background-color: rgb(107, 106, 106);
+                color:white;
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 66% 100%, 0 100%, 0% 50%);
+                font-size: small;
+
+            }
+            .header h4{
+                text-align: center;
+                padding:0;
+                margin:0;
+                background-color: rgb(196, 230, 0);
+                padding:10px;
+                color:white;
+            }
+
+            /*container2*/
+
+            .container2{
+                
+                /* padding:0; */
+                margin: 0;
+                /* width:280px;
+                height: 50px; */
+                
+                
+
+            }
+            .cards2{
+                width:280px;
+                /* height: 50px; */
+                margin:0;
+                padding:0px;
+                
+            }
+            .card-body2{
+                
+                margin:0;
+                padding:0px;
+                color:rgb(107, 106, 106);
+            }
+            .header h2{
+                
+                padding:0;
+                margin:0;
+                color:rgb(107, 106, 106);
+                text-align: left;
+            }
+            .footer2{
+                text-align: start;
+            }
+            .card-body3{
+                text-align:left;
+            }
+
+            .bodys{
+                font-weight: 300;
+                font-size: 62.5%;
+                color: rgb(25,12,41);
+            }
+            .container3{
+                justify-content: center;
+                text-align: center;
+                display: flex;
+                height:20vh;
+
+            }
+            .cardss{
+                width: 500px;
+                background-color:rgb(107, 106, 106);
+                /* border-radius: 4px; */
+                display:flex;  
+                /* box-shadow: 0 0 0.9375em black; */
+            }
+            .headers{
+                position: relative;
+                flex: 0 0 0%;
+            }
+            .headings{
+                display: block;
+                width:100%;
+            }
+            .card-bodys{
+                flex: 1;
+                padding: 10px 10px 0px 0px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table width="100%" style="background-color:rgb(107, 106, 106);padding-left: 100px; padding-right: 100px; padding-top: 20px; padding-bottom: 60px;border-spacing: 0px;">
+            <tr>
+                <td>
+                    <table width="100%"  border="0" cellspacing="0" style="background-color:white; text-align: center; padding-left: 100px; padding-right: 100px;">
+                        <tr>
+                            <td class="nav" width="20%"> 
+                                <h4>Home</h4>
+                            </td>
+                            <td class="nav" width="20%" > 
+                                <h4>About us</h4>
+                            </td>
+                            <td class="nav" width="20%" > 
+                                <h4>Products</h4>
+                            </td>
+                            <td class="nav" width="20%"> 
+                                <h4>Services</h4>
+                            </td>
+                            <td class="nav" width="20%"> 
+                                <h4>Contact</h4>
+                            </td>
+                        </tr><br><br><br>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>                  
+                    <table width="100%"  border="0" style="background-color:white; padding-left: 100px; padding-right: 100px; padding-top:20px;">
+                        <tr>
+                            <td width="45%" style="text-align: right; padding-left: 50px;">
+                                <h1 style="color:rgb(196, 230, 0); font-size:xx-large; font-weight: 600;">l</h1>
+                            </td>
+                            <td width="50%" style="text-align: left; padding-right: 50px;">
+                                <h1 style="font-weight: 600; font-size: xx-large;">space</h1>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellpadding="2" style="background-color: white; border-spacing: 30px 30px; ">
+                        <tr>
+                            <td width="100%" align="center" cellspacing="0">
+                                <div class="slider">
+                                    <div class="images">
+                                        <input type="radio" name="slide" id="img1" checked>
+                                        <input type="radio" name="slide" id="img2">
+                                        <input type="radio" name="slide" id="img3">
+                                        <input type="radio" name="slide" id="img4">
+                            
+                                        <img src="https://rare-gallery.com/resol/1366x768/981658-living-rooms-TV-couch-red-speakers.jpg" class="m1"  alt="img1"  style="text-align:center;">
+                                        <img src="https://rare-gallery.com/thumbs/5418188-living-room-interior-design-apartment-home-interior-indoor-interior-home-interior-room-room-living-space-sofa-chair-tv-home-interor-modern-home-modern-interior-minimalism-floor-scandinavian-fu.jpg" class="m2"  alt="img2"  style="text-align:center;">
+                                        <img src="https://rare-gallery.com/thumbs/5403222-living-room-room-indoor-interior-home-furniture-sofa-couch-minimal-style-design-decor-apartment-pastel-pink-minimalist-simple-apt-office-technology-public-domain-images.jpg" class="m3"  alt="img3"  style="text-align:center;">
+                                        <img src="https://rare-gallery.com/thumbs/5326682-living-room-chair-interior-design-lamp-home-sofa-armchair-room-furniture-interior-living-table-kitchen-open-kitchen-open-space-minimal-modern-design-modern-house-modern-home-livingroom-public-.jpg" class="m4"  alt="img4"  style="text-align:center;">
+                                    </div>
+                                    <div class="dots">
+                                        <label for="img1"></label>
+                                        <label for="img2"></label>
+                                        <label for="img3"></label>
+                                        <label for="img4"></label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" style="background-color: white;">
+                        <tr>
+                            <td width="33%" align="right" cellspacing="0">
+                                <div class="container">
+                                    <div class="cards">
+                                        <div class= "header">
+                                            <h4>LOREM IPSUM IS</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="https://rare-gallery.com/thumbs/1171368-nature-room-indoors-bedroom-interior-design-cottage-estate-home-villa-mansion-farmhouse-property-real-estate-living-room-suite.jpg" width="300px" height="200px">
+                                        </div>
+                                        <div class="footer">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil provident vitae quidem beatae a eaque, eum maiores reiciendis voluptatum atque </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td  width="33%" align="center" cellspacing="0">
+                                <div class="container">
+                                    <div class="cards">
+                                        <div class= "header">
+                                            <h4>LOREM IPSUM IS</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="https://rare-gallery.com/thumbs/1177824-room-interior-interior-design-living-rooms-estate-floor-home-ceiling-hardwood-property-real-estate-living-room-suite.jpg" width="300px" height="200px">
+                                        </div>
+                                        <div class="footer">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil provident vitae quidem beatae a eaque, eum maiores reiciendis voluptatum atque </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="33%" align="left" cellspacing="0">
+                                <div class="container">
+                                    <div class="cards">
+                                        <div class= "header">
+                                            <h4>LOREM IPSUM IS</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="https://rare-gallery.com/thumbs/1177066-room-hotel-interior-design-estate-dining-room-lobby-home-hardwood-mansion-property-real-estate-living-room.jpg" width="300px" height="200px">
+                                        </div>
+                                        <div class="footer">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil provident vitae quidem beatae a eaque, eum maiores reiciendis voluptatum atque </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" style="background-color: white; padding-top: 50px;">
+                        <tr>
+                            <td width="33%" cellspacing="0" align="right">
+                                <div class="container2">
+                                    <div class="cards2">
+                                        <div class= "header">
+                                            <h2 style="padding-bottom: 25px;">Lorem Ipsum Simply</h2>
+                                        </div>
+                                        <div class="card-body3">
+                                            <p style="color:rgb(83, 80, 80); line-height: 2;"> > The standart chunk of Lorem Ipsum <br>
+                                                > Lorem ipsum dolor, sit amet  <br>
+                                                > adipisicing elit. Modi, provident <br>
+                                                > quaerat rem quae voluptatibus quo <br>
+                                                > illum eveniet neque delectus vel <br>
+                                                > inventore incidunt vitae aspernatur 
+                                            </p>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="33%"  cellspacing="0" align="center">
+                                <div class="container2">
+                                    <div class="cards2">
+                                        <div class= "header">
+                                            <h2>Lorem Ipsum Simply</h2>
+                                        </div>
+                                        <div class="card-body2">
+                                            <p style="color:rgb(196, 230, 0); line-height: 2;text-align: left;">The Standart Chunk Of Lorem Ipsum Dolor Sit Amet,</p>
+                                            <p style="text-align: left;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, corrupti porro illo harum corporis eum dignissimos sit, voluptate natus magnam numquam, dolor voluptates vitae eveniet quae perspiciatis ad non. At?</p>
+                                        </div>
+                                        <br>
+                                        <div class="footer2">
+                                            <button style="width: 100px; height: 30px; border: none; padding-left: 7px; color: white; background-color: rgb(83, 80, 80); cursor: pointer;">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="33%" cellspacing="0" align="left">
+                                <div class="container2">
+                                    <div class="cards2">
+                                        <div class= "header">
+                                            <h2>Lorem Ipsum Simply</h2>
+                                        </div>
+                                        <div class="card-body2">
+                                            <p style="color:rgb(196, 230, 0); line-height: 2;">The Standart Chunk Of Lorem Ipsum Dolor Sit Amet,</p>
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, corrupti porro illo harum corporis eum dignissimos sit, voluptate natus magnam numquam, dolor voluptates vitae eveniet quae perspiciatis ad non. At?</p>
+                                        </div>
+                                        <br>
+                                        <div class="footer2">
+                                            <button style="width: 100px; height: 30px; border: none; padding-left: 7px; color: white; background-color: rgb(83, 80, 80); cursor: pointer;">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table> 
+                    <table width="100%" border="0" style="padding-top: 30px; background-color: white; border-spacing:30px 50px;">
+                        <tr>
+                            <td  width="50%" align="left" cellspacing="0" style="padding-left: 100px;">
+                                <div class="container3">
+                                    <div class="cardss">
+                                        <div class= "headers">
+                                            <div class="headings">
+                                                <h1 style="background-color: rgb(196, 230, 0); height:131px; width:200px;padding:50px;font-size: xx-large; box-sizing: border-box; color:white;">15</h1>
+                                            </div>                               
+                                        </div>
+                                        <div class="card-bodys">
+                                            <h2 style="color: rgb(196, 230, 0);font-size:large; padding-left:10px;">LOREM IPSUM IS SIMPLY TEXT</h2><br>
+                                            <p style="color: white; font-size: small; text-align: left; padding-left:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus odit a nemo in ab sunt sint vel voluptas, soluta velit sequi quod ipsam nam asperiores. Dolorem aut et beatae nisi!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td  width="50%" align="right" cellspacing="0" style="padding-right: 100px;">
+                                <div class="container3">
+                                    <div class="cardss">
+                                        <div class= "headers">
+                                            <div class="headings">
+                                                <h1 style="background-color: rgb(196, 230, 0); height:131px; width:200px;padding:50px;font-size: x-large; box-sizing: border-box;color:white;">$</h1>
+                                            </div>                               
+                                        </div>
+                                        <div class="card-bodys">
+                                            <h2 style="color: rgb(196, 230, 0);font-size:large; padding-left:10px;">LOREM IPSUM IS SIMPLY TEXT</h2><br>
+                                            <p style="color: white; font-size: small; text-align: left; padding-left:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus odit a nemo in ab sunt sint vel voluptas, soluta velit sequi quod ipsam nam asperiores. Dolorem aut et beatae nisi!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>                           
+                        </tr>
+                        <tr>
+                            <td width="100%" colspan="2" align="center" style="padding:20px;">
+                                <p>DESIGN</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
